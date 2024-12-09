@@ -25,3 +25,37 @@ with open("example.txt", "r") as file:
     content = file.read()
     print(content)
 ```
+
+მაგალითი: ფაილში ჩაწერა
+
+```python
+with open("example.txt", "w") as file:
+    file.write("ეს არის ახალი მონაცემი.")
+```
+
+მაგალითი: ფაილში ინფორმაციის დამატება
+
+```python
+with open("example.txt", "a") as file:
+    file.write("\nეს არის დამატებითი ხაზი.")
+```
+
+ფაილის ავტომატური დახურვა
+with open კონსტრუქცია უზრუნველყოფს ფაილის ავტომატურ დახურვას, რაც საუკეთესო პრაქტიკაა Python-ში. მაგალითად:
+
+```python
+with open("example.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+```
+
+ფაილის არსებობის შემოწმება
+
+```python
+import os
+
+if os.path.exists("example.txt"):
+    print("ფაილი არსებობს.")
+else:
+    print("ფაილი არ არსებობს.")
+```
